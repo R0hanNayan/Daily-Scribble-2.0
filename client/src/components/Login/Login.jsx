@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";  //To change route
 
-function Login(){
+function Login({setLoggedUser}){
+    const navigate = useNavigate();
 
     const [ user, setUser ] = useState({
         email: "",
@@ -29,12 +31,16 @@ function Login(){
                     'Content-Type':'application/json'
                 }
             })     //Sending data to Backend
+            .then(res =>{
+                    setLoggedUser(res.data.user)
+                    navigate("/homepage")
+                } 
+            )
         }else{
             alert("Invalid Input");
         }
         
     }
-
 
     return(
         <div className="LoginPage">
@@ -43,7 +49,7 @@ function Login(){
             <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
             <button type="submit" onClick={loginUser}>Login</button>
             <p>Or</p>
-            <button type="button">New Account?</button>
+            <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
         </div>
     ) 
 }

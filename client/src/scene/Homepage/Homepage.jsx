@@ -1,11 +1,13 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
-function Homepage(){
+function Homepage({setLoggedUser}){
+
     return(
         <div>
             <p>Login Success!</p>
             <p>Welcome To HomePage!</p>
-            <button type="submit">Logout</button>
+            <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button>
         </div>
     )
 };

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 function Register(){
+    const navigate = useNavigate();
 
     const [ user, setUser ] = useState({
         userName: "",
@@ -30,7 +32,9 @@ function Register(){
                     'Content-Type':'application/json'
                 }
             })     //Sending data to Backend
-
+            .then(
+                navigate("/")
+            )
         }else{
             alert("Invalid Input");
         }
@@ -44,7 +48,7 @@ function Register(){
             <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
             <button type="submit" onClick={registerUser}>Register</button>
             <p>Or</p>
-            <button type="submit">Already Have an Account?</button>
+            <button type="submit" onClick={()=>{navigate("/")}}>Already Have an Account?</button>
         </div>
     ) 
 }
