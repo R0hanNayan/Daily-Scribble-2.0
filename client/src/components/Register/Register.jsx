@@ -32,8 +32,15 @@ function Register(){
                     'Content-Type':'application/json'
                 }
             })     //Sending data to Backend
-            .then(
-                navigate("/")
+            .then(res => {
+                    if(res.data.exists === true){
+                        alert("Email Id Already Registered");   //Checking if user already registered
+                        navigate("/")
+                    }else{
+                        alert("Registration Successful!");
+                        navigate("/");
+                    }
+                }
             )
         }else{
             alert("Invalid Input");

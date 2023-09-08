@@ -32,8 +32,14 @@ function Login({setLoggedUser}){
                 }
             })     //Sending data to Backend
             .then(res =>{
-                    setLoggedUser(res.data.user)
-                    navigate("/homepage")
+                    if(res.data.userNotFound === true){
+                        alert("User does not exists!");
+                    }else if(res.data.invalidCredentials === true){
+                        alert("Invalid Credentials!");
+                    }else{
+                        setLoggedUser(res.data.user)
+                        navigate("/homepage")
+                    }
                 } 
             )
         }else{
