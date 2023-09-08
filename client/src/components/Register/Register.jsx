@@ -26,7 +26,7 @@ function Register(){
         const { userName, email, password } = user;
         //Checking if input is valid or Not
         if(userName && email && password){
-            const response =  await axios.post("/auth/register", user, {
+            const response =  await axios.post("http://localhost:3000/auth/register", user, {
                 method: "POST",
                 headers: {
                     'Content-Type':'application/json'
