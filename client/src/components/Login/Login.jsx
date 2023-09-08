@@ -25,7 +25,7 @@ function Login({setLoggedUser}){
         
         //Checking if input is valid or Not
         if(email && password ){
-            const response =  await axios.post("http://localhost:3000/auth/login", user, {
+            const response =  await axios.post("https://dailyscribble.onrender.com/auth/login", user, {
                 method: "POST",
                 headers: {
                     'Content-Type':'application/json'
