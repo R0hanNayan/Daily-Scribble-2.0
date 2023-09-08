@@ -6,6 +6,7 @@ import authRoutes from "./routes/Auth.js";
 import mongoose from 'mongoose';
 import { register } from './controllers/Auth.js';
 import path from "path";
+import { fileURLToPath } from 'url';
 
 const app = express();
 
@@ -16,6 +17,9 @@ app.use(cors());
 dotenv.config();
 
 //To serve the frontend
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("*", function (_, res) {
   res.sendFile(
