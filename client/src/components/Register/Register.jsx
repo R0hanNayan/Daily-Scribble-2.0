@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import "./register.css"; 
 
 function Register(){
     const navigate = useNavigate();
@@ -48,14 +49,18 @@ function Register(){
     }
 
     return(
-        <div className="Register Page">
-            <h1>Register</h1>
-            <input type="username" name="userName" value={user.userName} placeholder="Username" onChange={handleChange}/>
-            <input type="email" name="email" value={user.email} placeholder="Email Id" onChange={handleChange}/>
-            <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
-            <button type="submit" onClick={registerUser}>Register</button>
-            <p>Or</p>
-            <button type="submit" onClick={()=>{navigate("/")}}>Already Have an Account?</button>
+        <div className="RegisterPage">
+            <div className="RegisterPage-content">
+                <h1>Welcome To Daily Scribble!</h1>
+                <div className="RegisterPage-inputs">
+                    <input type="username" name="userName" value={user.userName} placeholder="Username" onChange={handleChange}/>
+                    <input type="email" name="email" value={user.email} placeholder="Email Id" onChange={handleChange}/>
+                    <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
+                    <button type="submit" onClick={registerUser}>Register</button>
+                    <p>Or</p>
+                    <button type="submit" onClick={()=>{navigate("/")}}>Already Have an Account?</button>
+                </div>
+            </div>
         </div>
     ) 
 }

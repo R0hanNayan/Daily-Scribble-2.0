@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";  //To change route
+import "./login.css";
 
 function Login({setLoggedUser}){
     const navigate = useNavigate();
@@ -50,12 +51,16 @@ function Login({setLoggedUser}){
 
     return(
         <div className="LoginPage">
-            <h1>Login</h1>
-            <input type="email" name="email" value={user.email} placeholder="Email Id" onChange={handleChange}/>
-            <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
-            <button type="submit" onClick={loginUser}>Login</button>
-            <p>Or</p>
-            <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
+            <div className="LoginPage-content">
+                <h1>Welcome To Daily Scribble!</h1>
+                <div className="LoginPage-inputs">
+                    <input autocomplete="off" type="email" name="email" value={user.email} placeholder="Email" onChange={handleChange}/>
+                    <input autocomplete="off" type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
+                    <button type="submit" onClick={loginUser}>Login</button>
+                    <p>Or</p>
+                    <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
+                </div>
+            </div> 
         </div>
     ) 
 }
