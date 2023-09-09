@@ -1,23 +1,30 @@
 .LoginPage{
+    background-image: url("/public/assets/bg.png");
+    background-repeat: no-repeat;
+    background-position: right top;
     position:absolute;
     top:0;
     left:0;
     bottom:0;
     right:0;
-    background: linear-gradient(to bottom, rgb(194, 136, 249) 50%, white 50%);
+    /* background: linear-gradient(to bottom, rgb(194, 136, 249) 50%, white 50%); */
     padding-top: 5.5rem;
 }
 
 .LoginPage-content{
-    background: linear-gradient(to top, rgb(194, 136, 249) 50%, white 50%);;
-    border: none;
+    /* background: linear-gradient(to top, rgb(101, 133, 198) 50%, white 50%); */
+    background-color: white;
+    border:none;
+    outline: auto;
+    outline-offset: 0.2rem;
+    outline-color: white;
     padding: 2rem;
     margin: auto;
     width: 25rem;
     text-align: center;
     border-radius: 15px;
     box-shadow: 0px 5px 10px 1px rgb(34, 34, 34);
-    color: rgb(194, 136, 249);
+    /* color: rgb(101, 133, 198); */
 }
 
 h1{
@@ -26,6 +33,7 @@ h1{
     font-size: 2.5rem;
     padding-bottom: 10%;
     text-shadow: 2px 2px rgb(233, 233, 230);
+    color: rgb(95, 103, 156);
 }
 
 .LoginPage-inputs{
@@ -43,14 +51,14 @@ input{
     height: 3rem;
     width: 23rem;
     outline: none;
-    color: rgb(194, 136, 249);
+    color: rgb(95, 103, 156);
 }
 input:focus::placeholder{
     color: transparent;
 }
 
 button{
-    color: rgb(194, 136, 249);
+    color: rgb(95, 103, 156);
     border: solid;
     background-color: white;
     font-family: 'Oswald', sans-serif;
@@ -76,6 +84,7 @@ p{
     font-size: 1.3rem;
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
-    color: white;
+    color: rgb(95, 103, 156);
 }
+
 

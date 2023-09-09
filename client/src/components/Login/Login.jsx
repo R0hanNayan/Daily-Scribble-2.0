@@ -60,7 +60,7 @@ function Login({setLoggedUser}){
                     <p>Or</p>
                     <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
                 </div>
-            </div> 
+            </div>  
         </div>
     ) 
 }
