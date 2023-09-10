@@ -51,16 +51,19 @@ function Login({setLoggedUser}){
 
     return(
         <div className="LoginPage">
-            <div className="LoginPage-content">
-                <h1>Welcome To Daily Scribble!</h1>
-                <div className="LoginPage-inputs">
-                    <input autocomplete="off" type="email" name="email" value={user.email} placeholder="Email" onChange={handleChange}/>
-                    <input autocomplete="off" type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
-                    <button type="submit" onClick={loginUser}>Login</button>
-                    <p>Or</p>
-                    <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
-                </div>
-            </div>  
+            <div className="leftHalf">
+            </div>
+            <div className="rightHalf">
+                <h1>The Daily Scribble!</h1>
+                    <div className="LoginPage-inputs">
+                        <h2>Sign in</h2>
+                        <input autocomplete="off" type="email" name="email" value={user.email} placeholder="Email" onChange={handleChange}/>
+                        <input autocomplete="off" type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
+                        <button type="submit" onClick={loginUser}>Sign in</button>
+                        <p>Or</p>
+                        <button type="button" onClick={()=>{navigate("/auth")}}>New Account?</button>
+                    </div>
+            </div>
         </div>
     ) 
 }
