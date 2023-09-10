@@ -53,15 +53,15 @@ function Register(){
             <div className="leftHalf">
             </div>
             <div className="rightHalf">
-                <h1>The Daily Scribble!</h1>
+                <h1 id="RegTitle">The Daily Scribble!</h1>
                     <div className="RegisterPage-inputs">
-                        <h2>Sign Up</h2>
-                        <input type="username" name="userName" value={user.userName} placeholder="Username" onChange={handleChange}/>
-                        <input type="email" name="email" value={user.email} placeholder="Email Id" onChange={handleChange}/>
-                        <input type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
-                        <button type="submit" onClick={registerUser}>Sign Up</button>
-                        <p>Or</p>
-                        <button type="submit" onClick={()=>{navigate("/")}}>Already Have an Account?</button>
+                        <h2 id="signUp">Sign Up</h2>
+                        <input id="RegInputs" type="username" name="userName" value={user.userName} placeholder="Username" onChange={handleChange}/>
+                        <input id="RegInputs" type="email" name="email" value={user.email} placeholder="Email Id" onChange={handleChange}/>
+                        <input id="RegInputs" type="password" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
+                        <button id="RegBtn" type="submit" onClick={registerUser}>Sign Up</button>
+                        <p id="RegOr">Or</p>
+                        <button id="RegBtn" type="submit" onClick={()=>{navigate("/")}}>Already Have an Account?</button>
                     </div>
             </div>
         </div>

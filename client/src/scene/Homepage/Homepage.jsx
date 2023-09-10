@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Homepage({setLoggedUser}){
 
     return(
         <div>
-            <p>Login Success!</p>
-            <p>Welcome To HomePage!</p>
-            <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button>
+            <Navbar />
+            {/* <p>Login Success!</p>
+            <p>Welcome To HomePage!</p> */}
+            {/* <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button> */}
         </div>
     )
 };

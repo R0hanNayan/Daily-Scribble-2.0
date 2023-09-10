@@ -1,0 +1,144 @@
+.Navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #96B6C5;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#navTitle{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    margin-left: 3rem;
+    color: white;
+}
+
+#navSubtitle{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-top: -2rem;
+    color: white;
+}
+
+.Navbar-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    column-gap: 2rem;
+    margin-left: auto;
+    margin-right: 5rem;
+}
+
+#menuItems{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#profile{
+    font-family: 'Oswald', sans-serif;
+    background-color: #96B6C5;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    width: 8rem;
+    color: white;
+}
+
+.dropDownMenu{
+    margin-right: 3rem;
+    margin-left: -3rem;
+}
+
+.dropDownMenuContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #96B6C5;
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 5rem;
+    min-width:210px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-right: 3rem;
+}
+
+@media screen and (max-width: 920px) {
+    #navTitle{
+        font-size: 2rem;
+    }
+
+    #navSubtitle{
+        font-size: 1.5rem;
+        margin-top: -1rem;
+    }
+
+    .Navbar-menu{
+        column-gap: 1.5rem;
+        margin-left: auto;
+        margin-right: 5rem;
+    }
+
+    #menuItems{
+        font-size: 1rem;
+    }
+    #profile{
+        font-size: 1rem;
+        width: 5.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #navTitle{
+        font-size: 1rem;
+        margin-left: 2rem;
+    }
+
+    #navSubtitle{
+        font-size: 0.7rem;
+        margin-left: 2rem;
+    }
+
+    .Navbar-menu{
+        display: none;
+    }
+
+    #menuItems{
+        font-size: 0.5rem;
+    }
+    #profile{
+        font-size: .5rem;
+        width: 4rem;
+    }
+    .dropDownMenu{
+        margin-right: 2rem;
+        margin-left: auto;
+    }
+    .dropDownMenuContainer{
+        padding: 1rem;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        margin-top: 2rem;
+        min-width: 10rem;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        margin-right: 1rem;
+    }
+}
+
+
+
