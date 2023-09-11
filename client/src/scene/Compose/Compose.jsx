@@ -25,7 +25,7 @@ function Compose(){
     const createPost = async() =>{
         const {userName, postTitle, postContent} = post;
         if(userName && postTitle && postContent){
-            await axios.post(`${"http://localhost:3000"}/compose`, post,{
+            await axios.post(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/compose`, post,{
                 method: "POST",
                 headers: {
                 'Content-Type':'application/json'
@@ -35,7 +35,7 @@ function Compose(){
                 if(res.data.userNotFound){
                     alert("UserName Not Found!");
                 }else{
-                    // navigate("/homepage");
+                    navigate("/homepage");
                     console.log(res.data.post);
                     alert("Posted!")
                 }
