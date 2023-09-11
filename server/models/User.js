@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from 'bcrypt';
 
 const UserSchema = new mongoose.Schema({
     userName: {
@@ -20,10 +19,6 @@ const UserSchema = new mongoose.Schema({
         required: true,
         min: 6,
     },
-    posts: {
-        type: Array,
-        default: []
-    }
     }, {timestamps: true}
 );
 

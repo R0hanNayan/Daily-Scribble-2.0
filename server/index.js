@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/Auth.js";
 import mongoose from 'mongoose';
 import { register } from './controllers/Auth.js';
-
+import { createPost} from './controllers/Post.js';
+import postRoutes from './routes/Post.js'
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -25,6 +26,10 @@ app.post("/auth/register", register);
 
 //Routes
 app.use("/auth", authRoutes);
+app.use("/compose", createPost);
+app.use("/", postRoutes);
+app.use("/profile", postRoutes);
+app.use("/profile/post", postRoutes);
 
 
 app.listen(process.env.PORT, ()=>{
