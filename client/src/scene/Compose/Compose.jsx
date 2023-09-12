@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import "./compose.css";
 
-function Compose(){
-    // const navigate = useNavigate();
+function Compose({handleClick}){
 
     const [ post, setPost ] = useState({
         userName: "",
@@ -35,9 +33,9 @@ function Compose(){
                 if(res.data.userNotFound){
                     alert("UserName Not Found!");
                 }else{
-                    navigate("/homepage");
                     console.log(res.data.post);
                     alert("Posted!")
+                    handleClick("homepage");
                 }
             })
         }else{

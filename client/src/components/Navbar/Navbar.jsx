@@ -2,19 +2,21 @@ import React, {useState} from "react";
 import "./navbar.css";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
-function Menu(){
+
+function Menu({handleClick}){
+
     return (
         <>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/homepage">Home</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/compose">Compose</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="#posts">Posts</a></p>
+            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("compose")}>Compose</a></p>
+            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/posts">Posts</a></p>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/contact">Contact</a></p>
             <button id="profile"><a style={{textDecoration: 'none', color: "inherit"}} href="/profile">Profile Name</a></button>
         </>
     );
 }
 
-function Navbar() {
+function Navbar({handleClick}) {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -24,7 +26,7 @@ function Navbar() {
                 <h3 id="navSubtitle">Scribble On</h3>
             </div>
             <div className="Navbar-menu">
-                <Menu />
+                <Menu handleClick={handleClick}/>
             </div>
             <div className="dropDownMenu">
                     {toggleMenu ?
@@ -34,7 +36,7 @@ function Navbar() {
                     {toggleMenu ?
                         <div className="dropDownMenuContainer">
                             <div className="dropDownMenuContainerLinks"> 
-                                <Menu />
+                                <Menu handleClick={handleClick}/>
                             </div>
                         </div>:
                         null

@@ -5,7 +5,6 @@ import "./posts.css";
 import PostWidget from "./PostWidget/PostWidget";
 
 function Posts() {
-    // const navigate = useNavigate();
     const [posts, setPost] = useState([]);
     const [postsAvailable, setPostsAvailable] = useState(false);
 
