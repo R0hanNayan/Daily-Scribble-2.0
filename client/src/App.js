@@ -7,6 +7,7 @@ import Register from './components/Register/Register';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Compose from './scene/Compose/Compose';
 import Posts from './components/Posts/Posts';
+import Navbar from './components/Navbar/Navbar';
 
 
 
@@ -20,7 +21,7 @@ function App() {
           <Route 
             path='/homepage' 
             element={
-              user && user._id && user.password ? <Homepage setLoggedUser={setLoggedUser}/> : <Login setLoggedUser={setLoggedUser}/> //Checking if user exist or not
+              user && user._id && user.password ? <Homepage setLoggedUser={setLoggedUser} user={user}/> : <Login setLoggedUser={setLoggedUser}/> //Checking if user exist or not
             } 
           />
 

@@ -48,15 +48,19 @@
     background-color: #96B6C5;
     outline: none;
     border: none;
-    border-radius: 5px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     font-size: 1.5rem;
-    width: 8rem;
+    min-width: 10rem;
     color: white;
 }
 
 .dropDownMenu{
     margin-right: 3rem;
     margin-left: -3rem;
+    position: relative;
+    z-index: 10;
 }
 
 .dropDownMenuContainer{
@@ -125,6 +129,7 @@
     .dropDownMenu{
         margin-right: 2rem;
         margin-left: auto;
+        
     }
     .dropDownMenuContainer{
         padding: 1rem;

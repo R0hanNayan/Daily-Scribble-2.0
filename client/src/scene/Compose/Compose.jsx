@@ -45,11 +45,16 @@ function Compose({handleClick}){
     
     
     return (
-        <div>
-            <input autocomplete="off" type="userName" name="userName" value={post.userName} placeholder="UserName" onChange={handleChange}/>
-            <input autocomplete="off" type="title" name="postTitle" value={post.postTitle} placeholder="Title" onChange={handleChange}/>
-            <input autocomplete="off" type="text" name="postContent" value={post.postContent} placeholder="Content" onChange={handleChange}/>
-            <button type="submit" onClick={createPost}>Post</button>
+        <div className="Compose-Page">
+            <div className="Compose-Page-Title">
+                <h1 id="composePage">Create New Post...</h1>
+            </div>
+            <div className="Compose-Page-Box">
+                <input id="userName" autocomplete="off" type="userName" name="userName" value={post.userName} placeholder="UserName" onChange={handleChange}/>
+                <input id="postTitle" autocomplete="off" type="title" name="postTitle" value={post.postTitle} placeholder="Title" onChange={handleChange}/>
+                <textarea id="postContent" name="postContent" value={post.postContent}  onChange={handleChange}/>
+                <button id="postBtn" type="submit" onClick={createPost}>Post</button>
+            </div>
         </div>
     );
 }

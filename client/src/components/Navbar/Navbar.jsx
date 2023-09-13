@@ -3,20 +3,20 @@ import "./navbar.css";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
 
-function Menu({handleClick}){
+function Menu({handleClick, user}){
 
     return (
         <>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/homepage">Home</a></p>
+            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("homepage")}>Home</a></p>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("compose")}>Compose</a></p>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/posts">Posts</a></p>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/contact">Contact</a></p>
-            <button id="profile"><a style={{textDecoration: 'none', color: "inherit"}} href="/profile">Profile Name</a></button>
+            <button id="profile"><a style={{textDecoration: 'none', color: "inherit"}} href="/profile">{user.userName}</a></button>
         </>
     );
 }
 
-function Navbar({handleClick}) {
+function Navbar({handleClick, user}) {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -26,7 +26,7 @@ function Navbar({handleClick}) {
                 <h3 id="navSubtitle">Scribble On</h3>
             </div>
             <div className="Navbar-menu">
-                <Menu handleClick={handleClick}/>
+                <Menu handleClick={handleClick} user={user}/>
             </div>
             <div className="dropDownMenu">
                     {toggleMenu ?
@@ -36,7 +36,7 @@ function Navbar({handleClick}) {
                     {toggleMenu ?
                         <div className="dropDownMenuContainer">
                             <div className="dropDownMenuContainerLinks"> 
-                                <Menu handleClick={handleClick}/>
+                                <Menu handleClick={handleClick} user={user}/>
                             </div>
                         </div>:
                         null

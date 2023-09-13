@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Posts from "../../components/Posts/Posts";
 import Compose from "../Compose/Compose";
 
-function Homepage({setLoggedUser}){
+function Homepage({setLoggedUser, user}){
     const [pageType, setPage] = useState("homepage");
 
     const handleClick = (e) =>{
@@ -12,16 +12,14 @@ function Homepage({setLoggedUser}){
 
     return(
         <div>
-            
+            <Navbar handleClick = {handleClick} user={user}/>
             {pageType === "homepage" ? (
                 <div>
-                    <Navbar handleClick = {handleClick}/>
                     <Posts />
                 </div>
             ):(
                 pageType === "compose" ? (
                     <div>
-                        {/* <Navbar handleClick = {handleClick}/> */}
                         <Compose handleClick={handleClick}/>
                     </div>
                 ) : (
