@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Posts from "../../components/Posts/Posts";
 import Compose from "../Compose/Compose";
+import Home from "../../components/Home/Home";
 
 function Homepage({setLoggedUser, user}){
     const [pageType, setPage] = useState("homepage");
@@ -15,7 +16,12 @@ function Homepage({setLoggedUser, user}){
             <Navbar handleClick = {handleClick} user={user}/>
             {pageType === "homepage" ? (
                 <div>
-                    <Posts />
+                    <div className="Home-Component">
+                        <Home />
+                    </div>
+                    {/* <div className="Post-Component">
+                        <Posts />
+                    </div> */}
                 </div>
             ):(
                 pageType === "compose" ? (
@@ -27,9 +33,7 @@ function Homepage({setLoggedUser, user}){
                 )
             )
         }
-                
-            
-            
+        
             {/* <p>Login Success!</p>
             <p>Welcome To HomePage!</p> */}
             {/* <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button> */}

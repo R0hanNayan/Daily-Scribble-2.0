@@ -80,22 +80,25 @@
     margin-right: 3rem;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1024px) {
     #navTitle{
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-left: 1rem;
     }
 
     #navSubtitle{
         font-size: 1.5rem;
         margin-top: -1rem;
+        margin-left: 1rem;
     }
-
     .Navbar-menu{
         column-gap: 1.5rem;
-        margin-left: auto;
-        margin-right: 5rem;
+        margin-right: 2rem;
     }
-
+    .dropDownMenu{
+        margin-left: -0.5rem;
+    }
+    
     #menuItems{
         font-size: 1rem;
     }
@@ -133,14 +136,12 @@
     }
     .dropDownMenuContainer{
         padding: 1rem;
-        position: absolute;
+        /* position: absolute; */
         top: 2rem;
-        right: 0;
+        /* right: 0; */
         margin-top: 2rem;
         min-height: 14rem;
         min-width: 10rem;
-        border-radius: 5px;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
         margin-right: 1rem;
     }
 }
