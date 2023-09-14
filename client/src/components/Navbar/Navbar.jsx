@@ -3,19 +3,19 @@ import "./navbar.css";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
 
-function Menu({handleClick, user}){
+function Menu({handleClick, user, setLoggedUser}){
     return (
         <>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("homepage")}>Home</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("compose")}>Compose</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("posts")}>Blogs</a></p>
-            {/* <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/contact">Contact</a></p> */}
-            <button id="profile"><a style={{textDecoration: 'none', color: "inherit"}} href="/profile">{user.userName}</a></button>
+            <p id="menuItems" onClick={() => handleClick("homepage")}>Home</p>
+            <p id="menuItems" onClick={() => handleClick("compose")}>Compose</p>
+            <p id="menuItems" onClick={() => handleClick("posts")}>Blogs</p>
+            <button id="profile" onClick={() => handleClick("profile")}>{user.userName}</button>
+            <button id="logout" onClick={()=>{setLoggedUser({})}}>Logout!</button>
         </>
     );
 }
 
-function Navbar({handleClick, user}) {
+function Navbar({handleClick, user, setLoggedUser}) {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -25,7 +25,7 @@ function Navbar({handleClick, user}) {
                 <h3 id="navSubtitle">Scribble On</h3>
             </div>
             <div className="Navbar-menu">
-                <Menu handleClick={handleClick} user={user}/>
+                <Menu handleClick={handleClick} user={user} setLoggedUser={setLoggedUser}/>
             </div>
             <div className="dropDownMenu">
                     {toggleMenu ?
@@ -35,7 +35,7 @@ function Navbar({handleClick, user}) {
                     {toggleMenu ?
                         <div className="dropDownMenuContainer">
                             <div className="dropDownMenuContainerLinks"> 
-                                <Menu handleClick={handleClick} user={user}/>
+                                <Menu handleClick={handleClick} user={user} setLoggedUser={setLoggedUser}/>
                             </div>
                         </div>:
                         null

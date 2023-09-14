@@ -14,7 +14,7 @@ function Homepage({ setLoggedUser, user }) {
 
     return (
         <div>
-            <Navbar handleClick={handleClick} user={user} />
+            <Navbar handleClick={handleClick} user={user} setLoggedUser={setLoggedUser}/>
             {pageType === "homepage" ? (
                 <div>
                     <Home />
@@ -36,10 +36,6 @@ function Homepage({ setLoggedUser, user }) {
                 )
             )
             }
-
-            {/* <p>Login Success!</p>
-            <p>Welcome To HomePage!</p> */}
-            {/* <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button> */}
         </div>
     )
 };
