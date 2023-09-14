@@ -1,39 +1,42 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import Posts from "../../components/Posts/Posts";
+import Posts from "../Posts/Posts"
 import Compose from "../Compose/Compose";
 import Home from "../../components/Home/Home";
+import './homepage.css'
 
-function Homepage({setLoggedUser, user}){
+function Homepage({ setLoggedUser, user }) {
     const [pageType, setPage] = useState("homepage");
 
-    const handleClick = (e) =>{
+    const handleClick = (e) => {
         setPage(e);
     }
 
-    return(
+    return (
         <div>
-            <Navbar handleClick = {handleClick} user={user}/>
+            <Navbar handleClick={handleClick} user={user} />
             {pageType === "homepage" ? (
                 <div>
-                    <div className="Home-Component">
-                        <Home />
-                    </div>
-                    {/* <div className="Post-Component">
-                        <Posts />
-                    </div> */}
+                    <Home />
+
                 </div>
-            ):(
+            ) : (
                 pageType === "compose" ? (
                     <div>
-                        <Compose handleClick={handleClick}/>
+                        <Compose handleClick={handleClick} />
                     </div>
                 ) : (
-                    null
+                    pageType === "posts" ? (
+                        <div>
+                            <Posts />
+                        </div>
+                    ) : (
+                        null
+                    )
                 )
             )
-        }
-        
+            }
+
             {/* <p>Login Success!</p>
             <p>Welcome To HomePage!</p> */}
             {/* <button type="submit" onClick={()=>{setLoggedUser({})}}>Logout</button> */}

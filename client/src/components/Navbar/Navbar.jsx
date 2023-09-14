@@ -4,13 +4,12 @@ import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
 
 function Menu({handleClick, user}){
-
     return (
         <>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("homepage")}>Home</a></p>
             <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("compose")}>Compose</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/posts">Posts</a></p>
-            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/contact">Contact</a></p>
+            <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit", cursor: "pointer"}} onClick={() => handleClick("posts")}>Blogs</a></p>
+            {/* <p id="menuItems"><a style={{textDecoration: 'none', color: "inherit"}} href="/contact">Contact</a></p> */}
             <button id="profile"><a style={{textDecoration: 'none', color: "inherit"}} href="/profile">{user.userName}</a></button>
         </>
     );

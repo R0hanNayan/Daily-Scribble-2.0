@@ -1,0 +1,36 @@
+.Posts-Container{
+    margin-top: 13rem;
+    /* border: 1px solid black; */
+}
+
+.Blogs{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+#blogTitle{
+    color: rgb(73, 73, 74);
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+}
+.posts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+@media screen and (max-width:1024px) {
+    .Posts-Container{
+        margin-top: 8.5rem;
+    }
+    #blogTitle{
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .Posts-Container{
+        margin-top: 5rem;
+    }
+    #blogTitle{
+        font-size: 2.5rem;
+    }
+}

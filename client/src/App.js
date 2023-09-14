@@ -5,9 +5,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 //For Routing in React
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Compose from './scene/Compose/Compose';
-import Posts from './components/Posts/Posts';
-import Navbar from './components/Navbar/Navbar';
+
 
 
 
