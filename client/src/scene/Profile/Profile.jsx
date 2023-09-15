@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import axios, * as others from 'axios';
+import axios from 'axios';
 import "./profile.css";
 import PostWidget from "../../components/PostWidget/PostWidget";
 

@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/Auth.js";
 import mongoose from 'mongoose';
 import { register } from './controllers/Auth.js';
-import { createPost, deletePost} from './controllers/Post.js';
+import { createPost, deletePost, getFeedPosts} from './controllers/Post.js';
 import { getUserPosts } from './controllers/Post.js';
 const app = express();
 
@@ -28,6 +28,7 @@ app.post("/auth/register", register);
 app.use("/auth", authRoutes);
 app.use("/compose", createPost);
 app.get("/profile/:username", getUserPosts);
+app.get("/homepage", getFeedPosts);
 app.use("/profile/:id", deletePost);
 
 
