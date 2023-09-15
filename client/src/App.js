@@ -7,10 +7,17 @@ import Register from './components/Register/Register';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
-
-
 function App() {
   const [user, setLoggedUser] = useState({}); 
+
+  useEffect(() => {
+    window.localStorage.setItem('USER_DETAIL', JSON.stringify(user))
+  }, [user]);
+
+  useEffect(()=>{
+    const data = window.localStorage.getItem('USER_DETAIL');
+    setLoggedUser(JSON.parse(data));
+  },[])
 
   return (
     <div className="App">
