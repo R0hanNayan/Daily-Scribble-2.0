@@ -10,14 +10,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [user, setLoggedUser] = useState({}); 
 
-  useEffect(() => {
-    window.localStorage.setItem('USER_DETAIL', JSON.stringify(user))
-  }, [user]);
-
   useEffect(()=>{
     const data = window.localStorage.getItem('USER_DETAIL');
     setLoggedUser(JSON.parse(data));
+    // console.log(user);
   },[])
+
+  const loggedIn = window.localStorage.getItem("isLoggedIn");
 
   return (
     <div className="App">
@@ -26,7 +25,7 @@ function App() {
           <Route 
             path='/homepage' 
             element={
-              user && user._id && user.password ? <Homepage setLoggedUser={setLoggedUser} user={user}/> : <Login setLoggedUser={setLoggedUser}/> //Checking if user exist or not
+              loggedIn ? <Homepage setLoggedUser={setLoggedUser} user={user}/> : <Login /> //Checking if user exist or not
             } 
           />
 

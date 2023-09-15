@@ -11,7 +11,7 @@ function Homepage({ setLoggedUser, user }) {
 
     const handleClick = (e) => {
         setPage(e);
-    }
+    }  
 
     return (
         <div className="container">
