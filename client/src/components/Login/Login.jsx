@@ -41,7 +41,7 @@ function Login() {
                         window.localStorage.setItem('USER_DETAIL', JSON.stringify(res.data.user));  //Storing User Details Locally
                         window.localStorage.setItem("isLoggedIn", true);    //Storing User LoggedIn Detail Locally
                         navigate("/homepage");
-                        window.location.reload(true);
+                        window.location.reload(true);   //To reload the page after login
                     }
                 }
                 )

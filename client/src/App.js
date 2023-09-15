@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Routes>
           <Route 
-            path='/homepage' 
+            exact path='/homepage' 
             element={
               loggedIn ? <Homepage setLoggedUser={setLoggedUser} user={user}/> : <Login /> //Checking if user exist or not
             } 
