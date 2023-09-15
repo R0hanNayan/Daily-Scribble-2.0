@@ -34,8 +34,9 @@ function Register(){
                 }
             })     //Sending data to Backend
             .then(res => {
+                    // console.log(res.data)
                     if(res.data.exists === true){
-                        alert("Email Id Already Registered");   //Checking if user already registered
+                        alert("User Already Registered");   //Checking if user already registered
                         navigate("/")
                     }else{
                         alert("Registration Successful!");

@@ -11,9 +11,11 @@ export const register = async (req, res) => {
             password,
             posts
         } = req.body;   //extract data from User Input
-
-        const user = User.findOne(email);
+        // console.log(req.body);
+        const user = await User.findOne({ email: email });
+        
         if (user) {
+            // console.log(user);
             res.send({ exists: true });   //sending boolean value to frontend if user exists
             console.log("User exists!");
         } else {
@@ -30,6 +32,7 @@ export const register = async (req, res) => {
                 }
             );
             const savedUser = await newUser.save(); //Save the new User
+            // res.send({exists:false});
             res.status(201).json(savedUser);
         }
     } catch (err) {
