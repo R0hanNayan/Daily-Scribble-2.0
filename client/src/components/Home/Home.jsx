@@ -4,7 +4,6 @@ import './home.css';
 function Home() {
     return (
         <div className="Home">
-
             <div className="Home-content">
                 <div className="Home-img">
                     <img id="homeImg1" src="./assets/home.jpg" />

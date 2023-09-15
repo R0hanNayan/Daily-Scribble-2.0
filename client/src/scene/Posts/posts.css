@@ -4,7 +4,7 @@
 }
 
 .Blogs{
-    margin-left: 2rem;
+    margin-left: 6rem;
     margin-bottom: 2rem;
 }
 #blogTitle{
@@ -15,10 +15,15 @@
 .posts{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     row-gap: 2rem;
 }
 
 @media screen and (max-width:1024px) {
+    .Blogs{
+        margin-left: 2rem;
+    }
     .Posts-Container{
         margin-top: 8.5rem;
     }
@@ -27,10 +32,13 @@
     }
 }
 @media screen and (max-width:600px) {
+    .Blogs{
+        margin-left: 1rem;
+    }
     .Posts-Container{
         margin-top: 5rem;
     }
     #blogTitle{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }

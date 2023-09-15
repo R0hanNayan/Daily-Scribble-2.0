@@ -19,7 +19,7 @@ function PostCard({ title, content, user, handleClick }) {
     )
 }
 
-function PostWidget({ title, content, user }) {
+function PostWidget({ title, content, user}) {
     const [isCardOpen, setIsCardOpen] = useState(false);
 
     const handleClick = () => {

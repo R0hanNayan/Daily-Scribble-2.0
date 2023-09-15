@@ -4,6 +4,7 @@ import Posts from "../Posts/Posts"
 import Compose from "../Compose/Compose";
 import Home from "../../components/Home/Home";
 import './homepage.css'
+import Profile from "../Profile/Profile";
 
 function Homepage({ setLoggedUser, user }) {
     const [pageType, setPage] = useState("homepage");
@@ -13,29 +14,39 @@ function Homepage({ setLoggedUser, user }) {
     }
 
     return (
-        <div>
-            <Navbar handleClick={handleClick} user={user} setLoggedUser={setLoggedUser}/>
-            {pageType === "homepage" ? (
-                <div>
-                    <Home />
-
-                </div>
-            ) : (
-                pageType === "compose" ? (
+        <div className="container">
+            <div>
+                <Navbar handleClick={handleClick} user={user} setLoggedUser={setLoggedUser} />
+            </div>
+            <div>
+                {pageType === "homepage" ? (
                     <div>
-                        <Compose handleClick={handleClick} />
+                        <Home />
+
                     </div>
                 ) : (
-                    pageType === "posts" ? (
+                    pageType === "compose" ? (
                         <div>
-                            <Posts />
+                            <Compose handleClick={handleClick} />
                         </div>
                     ) : (
-                        null
+                        pageType === "posts" ? (
+                            <div>
+                                <Posts />
+                            </div>
+                        ) : (
+                            pageType === "profile" ? (
+                                <div>
+                                    <Profile user={user} handleClick={handleClick}/>
+                                </div>
+                            ) : (
+                                null
+                            )
+                        )
                     )
                 )
-            )
-            }
+                }
+            </div>
         </div>
     )
 };

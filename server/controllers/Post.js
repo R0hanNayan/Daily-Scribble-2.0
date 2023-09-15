@@ -29,6 +29,7 @@ export const createPost =  async(req, res) => {
 
 export const getUserPosts = async(req, res) => {
     try{
+        // console.log(req.params);
         const {userName} = req.params;
         const post = await Post.find(userName);
         if(post){
@@ -59,8 +60,15 @@ export const getFeedPosts = async(req, res) => {
 export const deletePost = async(req, res) =>{
     try{
         const {id} = req.params;
+        
         const post = await Post.findById(id);
-        Post.delete(post);
+        // console.log(post);
+        if(post){
+            await Post.deleteOne({_id : id});
+            res.send({deleted : true});
+        }else{
+            res.send({deleted : false});
+        }
     }catch(err){
         console.log(err);
     }

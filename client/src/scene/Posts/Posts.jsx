@@ -38,7 +38,7 @@ function Posts() {
                     posts.map(
                         (post) => (
                             <PostWidget
-                                key={post.userName + post.postTitle}
+                                key={post._id}
                                 user={post.userName}
                                 title={post.postTitle}
                                 content={post.postContent}
