@@ -9,7 +9,7 @@ function Profile({user, handleClick}){
     const [postsAvailable, setPostsAvailable] = useState(false);
     // console.log(posts[0]._id);
     const getPosts = async () => {
-        await axios.get(`${"http://localhost:3000"}/profile/${user.userName}`)
+        await axios.get(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/profile/${user.userName}`)
             .then((res) => {
                 if (res.data.noPostFound === true) {
                     console.log("PostNotFound")
@@ -30,7 +30,7 @@ function Profile({user, handleClick}){
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     
     const deletePosts = async (_id) => {
-        await axios.post(`${"http://localhost:3000"}/profile/${_id}`)
+        await axios.post(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/profile/${_id}`)
             .then((res) => {
                 if (res.data.deleted === true) {
                     alert("Post Deleted!");
