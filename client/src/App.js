@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from "react-dom";
 import Homepage from './scene/Homepage/Homepage';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
@@ -23,7 +22,7 @@ function App() {
       <Router>
         <Routes>
           <Route 
-            exact path='/homepage' 
+            path='/homepage' 
             element={
               loggedIn ? <Homepage setLoggedUser={setLoggedUser} user={user}/> : <Login /> //Checking if user exist or not
             } 
