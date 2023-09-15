@@ -10,7 +10,7 @@ function Menu({handleClick, user, setLoggedUser}){
             <p id="menuItems" onClick={() => handleClick("compose")}>Compose</p>
             <p id="menuItems" onClick={() => handleClick("posts")}>Blogs</p>
             <button id="profile" onClick={() => handleClick("profile")}>{user.userName}</button>
-            <button id="logout" onClick={()=>{setLoggedUser({}); window.localStorage.removeItem("USER_DETAIL"); window.localStorage.removeItem("isLoggedIn");}}>Logout!</button>
+            <button id="logout" onClick={()=>{setLoggedUser({}); window.localStorage.removeItem("USER_DETAILS"); window.localStorage.removeItem("isLoggedIn");}}>Logout!</button>
         </>
     );
 }

@@ -40,7 +40,8 @@ function Login() {
                     } else {
                         window.localStorage.setItem('USER_DETAIL', JSON.stringify(res.data.user));  //Storing User Details Locally
                         window.localStorage.setItem("isLoggedIn", true);    //Storing User LoggedIn Detail Locally
-                        navigate("/homepage")
+                        navigate("/homepage");
+                        window.location.reload(true);
                     }
                 }
                 )
