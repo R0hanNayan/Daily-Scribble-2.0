@@ -27,7 +27,7 @@ app.post("/auth/register", register);
 //Routes
 app.use("/auth", authRoutes);
 app.use("/compose", createPost);
-app.get("/profile/:username", getUserPosts);
+app.get("/profile/:userName", getUserPosts);
 app.get("/homepage", getFeedPosts);
 app.use("/profile/:id", deletePost);
 

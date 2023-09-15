@@ -31,7 +31,8 @@ export const getUserPosts = async(req, res) => {
     try{
         // console.log(req.params);
         const {userName} = req.params;
-        const post = await Post.find(userName);
+        const post = await Post.find({userName : userName});
+        // console.log(post);
         if(post){
             res.send(post);
         }else{
