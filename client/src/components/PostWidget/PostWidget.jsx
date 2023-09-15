@@ -4,7 +4,7 @@ import './postCard.css';
 
 function PostCard({ title, content, user, handleClick }) {
     return (
-        <div className="PostCard">
+        <div className="PostCard scale-up-center">
             <h1 id="PostCardTitle">{title}</h1>
             <div className="Post-Card-Content">
                 <p id="PostCardContent">{content}</p>
