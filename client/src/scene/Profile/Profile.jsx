@@ -7,12 +7,12 @@ import PostWidget from "../../components/PostWidget/PostWidget";
 function Profile({user, handleClick}){
     const [posts, setPost] = useState([]);
     const [postsAvailable, setPostsAvailable] = useState(false);
-    
+
     // console.log(posts[0]._id);
     // console.log(user.userName);
 
     const getPosts = async () => {
-        await axios.get(`${"http://localhost:3000"}/profile/${user.userName}`)
+        await axios.get(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/profile/${user.userName}`)
             .then((res) => {
                 console.log(res.data);
                 if (res.data.noPosts === true) {
