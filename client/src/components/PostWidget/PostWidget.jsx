@@ -34,7 +34,7 @@ function PostWidget({ title, content, user}) {
                         <PostCard title={title} content={content} user={user} handleClick={handleClick}/>
                     </div>
                 ) : (
-                    <div className="Post-Widget">
+                    <div className="Post-Widget scale-up-top">
                         <h1 id="PostWidgetTitle">{title}</h1>
                         <div className="Post-Widget-Content">
                             <p id="PostWidgetContent">{content.slice(0, 150)}</p>

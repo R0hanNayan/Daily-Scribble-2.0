@@ -64,7 +64,7 @@ function Profile({user, handleClick}){
                                         title={post.postTitle}
                                         content={post.postContent}
                                     />
-                                    <div className="Post-Delete">
+                                    <div className="Post-Delete scale-up-top">
                                         <button id="deleteBtn" type="submit" onClick={()=>{deletePosts(post._id)}}>Delete Post!</button>
                                     </div>
                                 </div>

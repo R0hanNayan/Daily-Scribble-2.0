@@ -45,7 +45,7 @@ function Compose({handleClick}){
     
     
     return (
-        <div className="Compose-Page">
+        <div className="Compose-Page scale-up-center">
             <div className="Compose-Page-Title">
                 <h1 id="composePage">Create New Post...</h1>
             </div>

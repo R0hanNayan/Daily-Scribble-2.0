@@ -1,4 +1,4 @@
-.Home{
+.Home {
     /* border: 1px solid black; */
     position: absolute;
     left: 0;
@@ -6,12 +6,12 @@
     top: 11.4rem;
 }
 
-.Home-content{
+.Home-content {
     display: flex;
     flex-direction: row;
 }
 
-.Home-img{
+.Home-img {
     position: absolute;
     margin-left: -160px;
     width: 50%;
@@ -19,39 +19,42 @@
 }
 
 .slide-right {
-	-webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
- @-webkit-keyframes slide-right {
+@-webkit-keyframes slide-right {
     0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
-    100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
-    }
-  }
-  @keyframes slide-right {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(100px);
-              transform: translateX(100px);
-    }
-  }
-  
 
-#homeImg1{
+    100% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+    }
+}
+
+
+#homeImg1 {
     margin-top: 18rem;
     width: 40rem;
     height: 30rem;
 }
 
-.Home-intro{
+.Home-intro {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -60,8 +63,8 @@
     padding: 2rem;
     width: 50%;
 }
- 
-#homeTitle{
+
+#homeTitle {
     color: rgb(73, 73, 74);
     font-family: 'Oswald', sans-serif;
     font-size: 4rem;
@@ -70,13 +73,13 @@
     margin-top: -0.5rem;
 }
 
-#homeImg2{
+#homeImg2 {
     margin-left: 2rem;
     width: 100%;
     height: 28rem;
 }
 
-#homeIntro{
+#homeIntro {
     margin-left: 2rem;
     text-align: left;
     color: rgb(73, 73, 74);
@@ -84,48 +87,58 @@
     font-size: 1.5rem;
 }
 
-@media screen and (max-width: 1024px) {
-    .Home{
+@media only screen and (max-width: 1024px) {
+    .Home {
         top: 8rem;
     }
-    .Home-img{
+
+    .Home-img {
         display: none;
     }
-    .Home-intro{
+
+    .Home-intro {
         position: relative;
         width: 100%;
         align-items: center;
     }
-    #homeTitle{
+
+    #homeTitle {
         margin-left: -62%;
     }
-    #homeImg2{
+
+    #homeImg2 {
         margin-left: 0;
         width: 100%;
         height: 30rem;
     }
-    #homeIntro{
+
+    #homeIntro {
         margin-left: 0rem;
         text-align: center;
         width: 100%;
     }
+
 }
 
-@media screen and (max-width: 600px) {
-    .Home{
+@media only screen and (max-width: 600px) {
+    .Home {
         top: 11.4rem;
     }
-    .Home-intro{
+
+    .Home-intro {
         margin-top: -8rem;
     }
-    #homeTitle{
+
+    #homeTitle {
         font-size: 3rem;
     }
-    #homeImg2{
+
+    #homeImg2 {
         width: 100%;
         height: 20rem;
     }
-    #homeIntro{
+
+    #homeIntro {
         width: 100%;
         font-size: 1.2rem;
     }
