@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import "./profile.css";
 import PostWidget from "../../components/PostWidget/PostWidget";
+import URL from "../../URL";
 
 
 function Profile({user, handleClick}){
@@ -12,7 +13,7 @@ function Profile({user, handleClick}){
     // console.log(user.userName);
 
     const getPosts = async () => {
-        await axios.get(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/profile/${user.userName}`)
+        await axios.get(`${URL||"http://localhost:3000"}/profile/${user.userName}`)
             .then((res) => {
                 console.log(res.data);
                 if (res.data.noPosts === true) {
@@ -34,7 +35,7 @@ function Profile({user, handleClick}){
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     
     const deletePosts = async (_id) => {
-        await axios.post(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/profile/${_id}`)
+        await axios.post(`${URL||"http://localhost:3000"}/profile/${_id}`)
             .then((res) => {
                 if (res.data.deleted === true) {
                     alert("Post Deleted!");

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import URL from "../../URL";
 import "./compose.css";
 
 function Compose({handleClick}){
@@ -23,7 +24,7 @@ function Compose({handleClick}){
     const createPost = async() =>{
         const {userName, postTitle, postContent} = post;
         if(userName && postTitle && postContent){
-            await axios.post(`${"https://dailyscribble.onrender.com"||"http://localhost:3000"}/compose`, post,{
+            await axios.post(`${URL||"http://localhost:3000"}/compose`, post,{
                 method: "POST",
                 headers: {
                 'Content-Type':'application/json'

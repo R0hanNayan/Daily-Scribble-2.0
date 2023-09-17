@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./posts.css";
 import PostWidget from "../../components/PostWidget/PostWidget";
+import URL from "../../URL";
 
 function Posts() {
     const [posts, setPost] = useState([]);
     const [postsAvailable, setPostsAvailable] = useState(false);
 
     const getPosts = async () => {
-        await axios.get(`${"https://dailyscribble.onrender.com" || "http://localhost:3000"}/homepage`)
+        await axios.get(`${URL || "http://localhost:3000"}/homepage`)
             .then((res) => {
                 if (res.data.noPostFound === true) {
                     console.log("PostNotFound")

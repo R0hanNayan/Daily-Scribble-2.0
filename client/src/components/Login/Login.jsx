@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";  //To change route
 import "./login.css";
+import URL from "../../URL";
 
 function Login() {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ function Login() {
 
         //Checking if input is valid or Not
         if (email && password) {
-            const response = await axios.post(`${"https://dailyscribble.onrender.com" || "http://localhost:3000"}/auth/login`, user, {
+            const response = await axios.post(`${URL || "http://localhost:3000"}/auth/login`, user, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

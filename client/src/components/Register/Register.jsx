@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./register.css"; 
+import URL from "../../URL";
 
 function Register(){
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Register(){
         const { userName, email, password } = user;
         //Checking if input is valid or Not
         if(userName && email && password){
-            const response =  await axios.post(`${"https://dailyscribble.onrender.com" || "http://localhost:3000"}/auth/register`, user, {
+            const response =  await axios.post(`${URL || "http://localhost:3000"}/auth/register`, user, {
                 method: "POST",
                 headers: {
                     'Content-Type':'application/json'
