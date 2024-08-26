@@ -1,3 +1,2 @@
-// const URL = "https://dailyscribble.onrender.com";
-const URL = "https://super-seal-pantyhose.cyclic.cloud";
+const URL = "https://dailyscribble.onrender.com";
 export default URL;
